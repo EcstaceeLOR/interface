@@ -1,4 +1,3 @@
-import { SITE_URL } from "@/shared/lib/site-identity"
 import { useEffect, useMemo, useRef, useState } from "react"
 
 import { QRCodeSVG } from "qrcode.react"
@@ -20,6 +19,7 @@ import type { ComponentProps } from "react"
 import { useKeyboardShortcut } from "@/shared/hooks/useKeyboardShortcut"
 import { useWallet } from "@/app/providers"
 import { NETWORK } from "@/app/config/network"
+import { SITE_URL } from "@/shared/lib/site-identity"
 
 type ConnectButtonProps = Omit<
   ComponentProps<typeof Button>,
