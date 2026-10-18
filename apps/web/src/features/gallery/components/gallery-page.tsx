@@ -1,4 +1,3 @@
-import { REPO_URL } from "@/shared/lib/site-identity"
 import { useState } from "react"
 import { AppShell } from "@workspace/ui/components/app-shell"
 import { Avatar, AvatarGroup } from "@workspace/ui/components/avatar"
@@ -33,6 +32,7 @@ import type { ProgressIndicatorProps } from "@workspace/ui/components/progress-i
 import { useDirection } from "@/ui/direction-provider"
 import { ChangelogCategoryBadge } from "@/features/changelog/components/ChangelogCategoryBadge"
 import { CHANGELOG_ENTRY_TYPES } from "@/features/changelog/types"
+import { REPO_URL } from "@/shared/lib/site-identity"
 
 const BUTTON_VARIANTS = [
   "default",
