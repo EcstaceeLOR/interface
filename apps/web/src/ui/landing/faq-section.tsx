@@ -1,4 +1,3 @@
-import { DOCS_URL } from "@/shared/lib/site-identity"
 import {
   Accordion,
   AccordionContent,
@@ -7,6 +6,7 @@ import {
 } from "@workspace/ui/components/accordion"
 
 import { LANDING_FAQS } from "./faq.generated"
+import { DOCS_URL } from "@/shared/lib/site-identity"
 
 const DOCS_ORIGIN = DOCS_URL
 
