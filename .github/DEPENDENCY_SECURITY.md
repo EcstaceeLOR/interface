@@ -49,3 +49,23 @@ impact. Remove ignores as soon as they are no longer justified.
 
 No exceptions are pre-approved by this document. Current audit failures
 must be investigated, not automatically bypassed.
+
+## Observed baseline: October 18, 2026
+
+The first implementation run of `bun audit --audit-level=high` reported
+three **high** advisories in the unmodified upstream lockfile:
+
+| Advisory | Resolved dependency path | Status on review date |
+| --- | --- | --- |
+| [GHSA-vfj7-8cjw-p6xm](https://github.com/advisories/GHSA-vfj7-8cjw-p6xm) | `@workspace/ui` → `shadcn` → `braces` | No patched published version |
+| [GHSA-jmr9-qjv8-65gv](https://github.com/advisories/GHSA-jmr9-qjv8-65gv) | `docs` → `@lhci/cli` → `extract-zip` | No patched published version |
+| [GHSA-7pqw-9j4j-h8q3](https://github.com/advisories/GHSA-7pqw-9j4j-h8q3) | `docs` → `@lhci/cli` → `extract-zip` | No patched published version |
+
+These are **unresolved**; the audit job intentionally fails until an
+effective dependency replacement/remediation ships or maintainers approve
+time-bound, reachability-reviewed exceptions using the process above.
+A detected vulnerability is not evidence that this product's code path is
+exploitable. Before an exception, assess whether untrusted brace patterns
+or untrusted ZIP files can reach the cited tools in production or CI.
+The next quarterly checkpoint is **January 18, 2027**, or sooner when
+patches become available.
