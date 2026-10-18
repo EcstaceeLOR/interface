@@ -27,9 +27,9 @@ describe("StatChartCard", () => {
         expect(labels).toEqual(
           expect.arrayContaining([expect.stringMatching(/^\d{2}:\d{2}$/)]),
         )
-        expect(labels.every((label) => /^\d{2}:\d{2}$/.test(label ?? ""))).toBe(true)
+        expect(labels.every((label) => /^\d{2}:\d{2}$/.test(label))).toBe(true)
       } else {
-        expect(labels.every((label) => /^\d{2}\/\d{2}$/.test(label ?? ""))).toBe(true)
+        expect(labels.every((label) => /^\d{2}\/\d{2}$/.test(label))).toBe(true)
       }
     },
   )
