@@ -1,3 +1,4 @@
+import { SITE_URL } from "@/shared/lib/site-identity"
 import { useState } from "react"
 import { Copy01Icon, Tick02Icon } from "@hugeicons/core-free-icons"
 import { Badge } from "@workspace/ui/components/badge"
@@ -25,7 +26,7 @@ export function ReleaseSection({
   const handleCopyPermalink = async () => {
     const origin =
       typeof window === "undefined"
-        ? "https://so4.market"
+        ? SITE_URL
         : window.location.origin
     const permalink = `${origin}/changelog${anchor}`
     try {
