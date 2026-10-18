@@ -1,0 +1,54 @@
+name: Contribution verification
+on:
+  push:
+    branches:
+      - fix/issue-837-pin-dependency-ranges
+      - ci/issue-838-dependency-security
+      - fix/issue-846-canonical-brand
+      - fix/issue-848-referral-chart-labels
+jobs:
+  full-gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.3.13
+      - name: Install exact locked dependencies
+        run: bun install --frozen-lockfile
+      - name: Lint
+        run: bun lint
+      - name: Typecheck
+        run: bun typecheck
+      - name: Design tokens
+        run: bun run check:tokens
+      - name: Docs content
+        run: bun run check:content
+      - name: Tests
+        run: bun run test
+      - name: Coverage
+        run: bun run test:coverage
+      - name: Production build
+        run: bun run build
+      - name: Indexer generation and build
+        run: bun run --cwd apps/s03-indexer codegen && bun run --cwd apps/s03-indexer build
+      - name: Indexer test
+        run: bun run --cwd apps/s03-indexer test
+      - name: Indexer local manifest sync
+        run: SO4_CONTRACTS_REPO="$PWD/apps/s03-indexer/tests/fixtures/contracts-repo" bun run --cwd apps/s03-indexer sync:contracts:local && bash scripts/validate-manifest.sh apps/s03-indexer/config/contracts.local.json
+      - name: Web typecheck
+        run: bun run --cwd apps/web typecheck
+      - name: Web build
+        run: bun run --cwd apps/web build
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.3.13
+      - run: bun audit --audit-level=high
