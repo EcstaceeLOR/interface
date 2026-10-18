@@ -1,6 +1,6 @@
-import { REPO_URL } from "@/shared/lib/site-identity"
 import { Quarter } from "./quarter"
 import type { QuarterData } from "./quarter"
+import { REPO_URL } from "@/shared/lib/site-identity"
 
 // No dated roadmap exists in the repo — GMX's quarter labels (Q1..Q4) imply
 // specific committed dates, which would be a fabricated public promise if
