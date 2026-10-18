@@ -1,6 +1,6 @@
-import { SOCIAL_URLS } from "@/shared/lib/site-identity"
 import { NewsletterForm } from "./newsletter-form"
 import { SocialSlider } from "./social-slider"
+import { SOCIAL_URLS } from "@/shared/lib/site-identity"
 
 // Counts stay "-" — no social account has a real follower count to report
 // yet, and a fabricated number is worse than an honest placeholder. URLs
