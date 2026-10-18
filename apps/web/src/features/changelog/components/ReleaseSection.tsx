@@ -1,4 +1,3 @@
-import { SITE_URL } from "@/shared/lib/site-identity"
 import { useState } from "react"
 import { Copy01Icon, Tick02Icon } from "@hugeicons/core-free-icons"
 import { Badge } from "@workspace/ui/components/badge"
@@ -8,6 +7,7 @@ import { Icon } from "@workspace/ui/components/icon"
 import { createAnchor, formatDate } from "../utils"
 import { ChangelogEntry } from "./ChangelogEntry"
 import type { Release } from "../types"
+import { SITE_URL } from "@/shared/lib/site-identity"
 
 interface ReleaseSectionProps {
   release: Release
