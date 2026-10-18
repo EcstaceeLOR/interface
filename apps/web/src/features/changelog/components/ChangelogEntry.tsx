@@ -1,8 +1,8 @@
-import { REPO_URL } from "@/shared/lib/site-identity"
 import { Badge } from "@workspace/ui/components/badge"
 import { areaLabel, typeLabel, typeToVariant } from "../utils"
 import { InlineMarkdown } from "./InlineMarkdown"
 import type { ChangelogEntry as IChangelogEntry } from "../types"
+import { REPO_URL } from "@/shared/lib/site-identity"
 
 interface ChangelogEntryProps {
   entry: IChangelogEntry
