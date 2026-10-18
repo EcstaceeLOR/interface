@@ -1,3 +1,4 @@
+import { REPO_URL } from "@/shared/lib/site-identity"
 import { useState } from "react"
 import { AppShell } from "@workspace/ui/components/app-shell"
 import { Avatar, AvatarGroup } from "@workspace/ui/components/avatar"
@@ -105,14 +106,14 @@ export function GalleryPage() {
           <p className="mt-1 text-sm text-muted-foreground">
             Every packages/ui primitive, all variants. See{" "}
             <a
-              href="https://github.com/Levee-HQ/interface/blob/main/DESIGN.md"
+              href={`${REPO_URL}/blob/main/DESIGN.md`}
               className="text-primary underline underline-offset-2"
             >
               DESIGN.md
             </a>{" "}
             and{" "}
             <a
-              href="https://github.com/Levee-HQ/interface/blob/main/packages/ui/CONTRIBUTING.md"
+              href={`${REPO_URL}/blob/main/packages/ui/CONTRIBUTING.md`}
               className="text-primary underline underline-offset-2"
             >
               packages/ui/CONTRIBUTING.md
