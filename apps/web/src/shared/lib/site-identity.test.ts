@@ -29,7 +29,7 @@ describe("canonical product identity (#846)", () => {
 
     for (const path of files) {
       const source = readFileSync(new URL(path, import.meta.url), "utf8")
-      expect(source, path).not.toMatch(/Levee-HQ|levee\\.market/)
+      expect(source, path).not.toMatch(/Levee-HQ|levee\.market/)
     }
   })
 })
