@@ -25,11 +25,11 @@ describe("StatChartCard", () => {
       expect(new Set(labels).size).toBe(labels.length)
       if (period === "24h") {
         expect(labels).toEqual(
-          expect.arrayContaining([expect.stringMatching(/^\\d{2}:\\d{2}$/)]),
+          expect.arrayContaining([expect.stringMatching(/^\d{2}:\d{2}$/)]),
         )
-        expect(labels.every((label) => /^\\d{2}:\\d{2}$/.test(label ?? ""))).toBe(true)
+        expect(labels.every((label) => /^\d{2}:\d{2}$/.test(label ?? ""))).toBe(true)
       } else {
-        expect(labels.every((label) => /^\\d{2}\\/\\d{2}$/.test(label ?? ""))).toBe(true)
+        expect(labels.every((label) => /^\d{2}\/\d{2}$/.test(label ?? ""))).toBe(true)
       }
     },
   )
