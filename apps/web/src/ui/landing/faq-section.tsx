@@ -1,3 +1,4 @@
+import { DOCS_URL } from "@/shared/lib/site-identity"
 import {
   Accordion,
   AccordionContent,
@@ -7,7 +8,7 @@ import {
 
 import { LANDING_FAQS } from "./faq.generated"
 
-const DOCS_ORIGIN = "https://docs.so4.market"
+const DOCS_ORIGIN = DOCS_URL
 
 export function FaqSection() {
   return (
