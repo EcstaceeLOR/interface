@@ -7,7 +7,7 @@ import {
 } from "./popover"
 
 describe("Popover trigger-following motion (OB-016)", () => {
-  it("applies origin-(--transform-origin) and side-aware animation classes", () => {
+  it("applies the stylesheet-driven popover motion contract", () => {
     render(
       <Popover open>
         <PopoverTrigger>Open</PopoverTrigger>
@@ -19,7 +19,9 @@ describe("Popover trigger-following motion (OB-016)", () => {
 
     const content = screen.getByTestId("popover-content")
     expect(content.className).toContain("origin-(--transform-origin)")
-    expect(content.className).toContain("data-open:animate-in")
-    expect(content.className).toContain("data-[side=bottom]:slide-in-from-top-2")
+    expect(content.className).toContain("so4-popover-content")
+    // Base UI lifecycle animation is supplied by the .so4-popover-content
+    // stylesheet rule; the component must retain its motion class and origin.
+    expect(content).toHaveAttribute("data-slot", "popover-content")
   })
 })

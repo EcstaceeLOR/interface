@@ -5,8 +5,8 @@ import { RadioGroup, RadioGroupItem } from "@workspace/ui/components/radio-group
 import { cn } from "@workspace/ui/lib/utils"
 import { Switch } from "@workspace/ui/components/switch"
 import {  useTheme } from "./theme-provider"
+import type { Theme } from "./theme-provider"
 import { useMotionReductionSetting } from "@/lib/motion-preference"
-import type {Theme} from "./theme-provider";
 
 interface ThemeOption {
   value: Theme
